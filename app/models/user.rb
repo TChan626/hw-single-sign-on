@@ -11,10 +11,7 @@ class User < ActiveRecord::Base
 	
 	#create new user
   def self.create_with_omniauth info
-		create! do |user|
-      user.email = info["email"]
-      user.name = info["name"]
-    end
+		create!(name: info['name'], email: info['email'])
   end
 	
 end

@@ -12,17 +12,15 @@ RSpec.describe User, type: :model do
       let(:email) {info1['email']}
       it 'creates a valid User with a name' do
 			  user1 = User.create_with_omniauth(info1)
-				expect(user1).to be_valid
 				expect(user1.name).to eq("SUNY Tester")
       end
       it 'creates a valid user with a valid email' do
 				user1 = User.create_with_omniauth(info1)
-				expect(user1).to be_valid
 				expect(user1.email).to eq("stester@binghamton.edu")
       end 
       it 'has a valid email' do
 				user1 = User.create_with_omniauth(info1)
-				expect(user1.email).to eq("stester@binghamton.edu")
+				expect(user1).to be_valid
       end
     end
     context 'it creates an invalid User' do
